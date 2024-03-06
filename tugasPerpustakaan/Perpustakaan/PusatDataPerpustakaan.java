@@ -34,13 +34,6 @@ public class PusatDataPerpustakaan {
             {"Muhammad: A Life in Sources", "Martin Spiritual", "380"}
         };
         
-        public String[][] psychology = {
-            {"Meaningful Existence", "Viktor Psychologist", "200"},
-            {"Thoughts in Motion", "Daniel Psychologist", "500"},
-            {"The Habitual Mind", "Charles Psychologist", "300"},
-            {"Persuasive Psychology", "Robert Psychologist", "250"},
-            {"Quiet Minds", "Susan Psychologist", "350"}
-        };
         
         public String[][] politics = {
             {"Discovering Indonesia", "Elizabeth Politician", "400"},
@@ -56,6 +49,13 @@ public class PusatDataPerpustakaan {
             {"The Amazing Gatsby", "F. Fantastic", "180"},
             {"Wizardry and Philosophy", "J.K. Wizard", "320"},
             {"Epic Adventures of the Ring", "J.R.R. Epic Writer", "1178"}
+        };
+        public String[][] psychology = {
+            {"Psychology and Life", "Philip G. Zimbardo", "220"},
+            {"The Psychology Book", "Nigel Benson", "410"},
+            {"Mindset: The New Psychology of Success", "Carol S. Dweck", "380"},
+            {"Influence: Science and Practice", "Robert B. Cialdini", "270"},
+            {"The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma", "Bessel van der Kolk", "320"}
         };
         
     
@@ -99,15 +99,7 @@ public String getInformasiBuku(int kodeBuku) {
                 informasi += "Jumlah Halaman: " + buku[2] + "\n\n";
             }
             break;
-        case 5:
-            informasi = "Kategori: Psikologi\n";
-            informasi += "========================\n";
-            for (String[] buku : psychology) {
-                informasi += "Judul: " + buku[0] + "\n";
-                informasi += "Pengarang: " + buku[1] + "\n";
-                informasi += "Jumlah Halaman: " + buku[2] + "\n\n";
-            }
-            break;
+    
         case 6:
             informasi = "Kategori: Politik\n";
             informasi += "========================\n";
@@ -117,10 +109,20 @@ public String getInformasiBuku(int kodeBuku) {
                 informasi += "Jumlah Halaman: " + buku[2] + "\n\n";
             }
             break;
+        
         case 7:
             informasi = "Kategori: Fiksi\n";
             informasi += "========================\n";
             for (String[] buku : fiction) {
+                informasi += "Judul: " + buku[0] + "\n";
+                informasi += "Pengarang: " + buku[1] + "\n";
+                informasi += "Jumlah Halaman: " + buku[2] + "\n\n";
+            }
+            break;
+        case 8:
+            informasi = "Kategori: psikologi\n";
+            informasi += "========================\n";
+            for (String[] buku : psychology) {
                 informasi += "Judul: " + buku[0] + "\n";
                 informasi += "Pengarang: " + buku[1] + "\n";
                 informasi += "Jumlah Halaman: " + buku[2] + "\n\n";
