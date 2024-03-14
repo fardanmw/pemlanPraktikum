@@ -1,26 +1,46 @@
 package Perpustakaan;
 import java.util.Scanner;
-
 public class Perpustakaan {
+
+    private String judul;
+    private String penulis;
+    private int jumlahHalaman;
+    private String sinopsis;
+
+    public Perpustakaan(String judul, String penulis, int jumlahHalaman, String sinopsis){
+        this.judul = judul;
+        this.penulis = penulis;
+        this.jumlahHalaman = jumlahHalaman;
+        this.sinopsis = sinopsis;
+    }
    
+    public int hitungJumlahKataSinopsis() {
+        String[]JumlahKata = sinopsis.split(" ");
+        return JumlahKata.length;
+    }
+        
+     public void displayInfo(){
+            System.out.println("1. Judul buku               : " +judul);
+            System.out.println("2. Penulis                  : " + penulis);
+            System.out.println("3. Jumlah Halaman           : " + jumlahHalaman);
+            System.out.println("4. Sinopsis                 : " + sinopsis);
+            System.out.println("5.  Jumlah kata di sinopsis : " + hitungJumlahKataSinopsis());
+    
+        }
         public static void main(String[] args) {
             PusatDataPerpustakaan perpus = new PusatDataPerpustakaan();
     
             Scanner input = new Scanner(System.in);
             int kodeBuku;
-            do{
+        }
 
-            System.out.println("========================PERPUSTAKAAN FILKOM========================\n");
-            System.out.printf("HALO, SELAMAT DATANG DI PERPUSTAKAAN FILKOM: \nTerdapat beberapa jenis buku di perpustakaan ini, yaitu:\n 1. Teknologi\n 2. Filsafat\n 3. Sejarah\n 4. Agama\n 5. Politik\n 6. Fiksi\n 7. psikologi \n 8.keluar dari perpustakaan  \n \nmasukkan nomor buku yang ingin anda cari : ");
-            kodeBuku = input.nextInt();
-            if (kodeBuku != 8) {
-                String infoBuku = perpus.getInformasiBuku(kodeBuku);
-                System.out.println(infoBuku);
+            public void kategori(Perpustakaan[] bukuArray){
+                int i = 0;
+                for (Perpustakaan buku : bukuArray) {
+                    i++;
+                    if (i <= bukuArray.length) 
+                        System.out.println("buku ke-" + i);
+                    buku.displayInfo();
+                }
             }
-            else{
-                System.out.println("Terima kasih telah menggunakan layanan Perpustakaan kami");
-            }
-        
-        }while (kodeBuku !=8);
-         }
-}
+        }
